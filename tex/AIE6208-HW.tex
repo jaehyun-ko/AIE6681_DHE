@@ -1,0 +1,77 @@
+\documentclass[
+	10pt,
+	a4paper,
+	% kosection,
+	% footnote,
+	% nobookmarks,
+	% microtype,
+	figtabcapt,
+%	lwarp
+]{oblivoir}
+
+%%%%%%%%%%%%%%%%
+% Front Matter %
+%%%%%%%%%%%%%%%%
+
+\input{setup/packages}							% Declare packages
+
+%%%%%%%%%%
+% Title, Authors, Date %
+%%%%%%%%%%
+
+\title{패턴인식 보고서}
+\author{120220210 고재현}
+\date{\today}
+
+\begin{document}
+
+%%%%%%%%%%
+% covers %
+%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%
+% Table of Contents %
+%%%%%%%%%%%%%%%%%%%%%
+\maketitle
+
+% \begin{abstract}
+% 이 문서는 2022 인공지능개론(EEE4178) 과목의 설명서이다.
+
+% \end{abstract}
+
+\pagenumbering{roman}                           % Start page numbering in Roman numerals
+% \tableofcontents*        						% Add table of contents
+% \clearpage
+
+%%%%%%%%%%%%%%%%%
+% preliminaries %
+%%%%%%%%%%%%%%%%%
+
+\setcounter{table}{0}		                    % Reset table counter
+\setcounter{figure}{0}		                    % Reset figure counter
+
+%%%%%%%%%%%%%
+% Main Text %
+%%%%%%%%%%%%%
+
+\pagenumbering{arabic}							% Start page numbering in Arabic numerals
+
+
+\input{text/1intro.tex}
+\input{text/2review.tex}
+% \input{text/3schedule.tex}
+% \input{text/4evaluation.tex}
+% \input{text/appendix.tex}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+% References Section %
+%%%%%%%%%%%%%%%%%%%%%%
+\bibliographystyle{ieeetr}						% Declare bibliography style
+\bibliography{ref.bib}							% Declare bibliography file
+
+\clearpage
+
+\end{document}
