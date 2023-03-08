@@ -1,5 +1,5 @@
 \documentclass[
-	10pt,
+	9pt,
 	a4paper,
 	% kosection,
 	% footnote,
@@ -77,18 +77,35 @@ LM 기반의 생성 모델은 고품질의 Tokenizer 및 Transformer 기반 예�
 최근 Vall-E\cite{vall-eX}와 같이 빠른 속도의 학습 및 생성이 가능하다.
 
 \subsection{요소 기술별 동향}
-\subsubsection{얼굴 합성 기술}
-얼굴 합성 기술은 주로 키포인트(랜드마크 등)를 생성한 뒤,
+\subsubsection{얼굴 및 모션 합성 기술}
+얼굴 또는 모션 합성 기술은 주로 키포인트(랜드마크 등)를 생성한 뒤,
 해당 키포인트를 기반으로 모델링을 덮어씌우는 방식으로 수행\cite{MeshTalk2021}되거나,
 원본 영상을 변형하여 각 영상 프레임을 생성하는 방식\cite{MakeItTalk2020}으로 수행된다.
 스마일게이트 AI Media Team의 블로그 자료를 보면,
 이와 관련하여 원본 영상을 변형하여 각 영상 프레임을 생성하는 방식의 실시간 처리를 시도한 바가 있다.
-해당 방식은
+합성 속도 및 품질 간의 Trade-off가 큰 분야이나, NVIDIA의 모델들이 높은 품질 및 빠른 속도의 아바타를 생성하고 있다.
+
+\subsubsection{음성 합성 기술}
+음성 합성 기술은 VITS\cite{VITS2021}와 같이 Transformer 기반의 모델들이 SOTA를 차지하고 있다.
+특히 Vall-EX\cite{vall-eX} 와 같은 모델은 학습 데이터 정제 없이, 적은 입력 프롬프트로도 좋은 결과를 생성한다.
 
 \section{디지털 휴먼 모델의 발전 방향}
+현재 디지털 휴먼의 요소 기술들은 품질 면에서(MOS Score 등) 사람과 꽤 유사한 성능을 보여주고 있다.
+특히 Vall-EX\cite{vall-eX}는 TTS 분야에서 빠른 속도와 높은 품질 및 다양한 스타일 변환을 동시에 달성하여서,
+음성 합성 분야는 거의 해결된 문제라고도 볼 수 있다.
+그러나 모션 합성 분야에서의 디테일한 표현이나, 학습에 매우 많은 양의 데이터가 필요한 등의 문제는 아직 남아있다.
+게임 등에 디지털 휴먼을 활용하기 위해서는 다양한 버전을 생성해야 하는 경우가 생길텐데,
+성격, 목소리, 외형 등을 controllable하게 조정하는 모델이 필요하다.
 
+\subsection{추후 개발 시 고려사항}
+\begin{itemize}\tightlist
+	\item 각 요소 기술별로 어느 데이터/모델을 사용하고 있는가?
+	\item 각 요소 기술의 현재의 controllablity는 어느 정도인가?
+	\item E2E Integration 되어 있는 부분은 무엇이 있는가?
+	\item Multimodal(Music, Text, Motion)을 잘 고려하고 있는가?
+\end{itemize}
  
-
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%
 % References Section %
 %%%%%%%%%%%%%%%%%%%%%%
